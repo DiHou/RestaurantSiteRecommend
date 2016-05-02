@@ -1,0 +1,45 @@
+hive> create table rest_byzip as select zipcode, cuisine, count(cuisine) as cnt from restclean group by zipcode, cuisine;
+Query ID = cloudera_20151206195858_c382c4c6-1844-4b66-85ea-cb80845c189f
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1449418043590_0059, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0059/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0059
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2015-12-06 19:58:52,837 Stage-1 map = 0%,  reduce = 0%
+2015-12-06 19:59:09,449 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.77 sec
+2015-12-06 19:59:21,142 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 5.29 sec
+MapReduce Total cumulative CPU time: 5 seconds 290 msec
+Ended Job = job_1449418043590_0059
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/rest_byzip
+Table default.rest_byzip stats: [numFiles=1, numRows=1857, totalSize=30655, rawDataSize=28798]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 5.29 sec   HDFS Read: 509139 HDFS Write: 30734 SUCCESS
+Total MapReduce CPU Time Spent: 5 seconds 290 msec
+OK
+Time taken: 44.236 seconds
+hive> select * from rest_byzip limit 15;
+OK
+ 10001	American	38
+ 10001	Asian	84
+ 10001	Bar	69
+ 10001	Cafe	52
+ 10001	FastFood	210
+ 10001	Halal	7
+ 10001	Latin	10
+ 10001	Mediterranean	6
+ 10001	Other	121
+ 10001	Vegan	4
+ 10002	American	14
+ 10002	Asian	106
+ 10002	Bar	30
+ 10002	Cafe	47
+ 10002	FastFood	44
+Time taken: 0.088 seconds, Fetched: 15 row(s)
+hive>

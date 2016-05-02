@@ -1,0 +1,161 @@
+hive> create table Bar_cnt as select zipcode as zip_bar, cnt as cnt_bar from rest_zip_crossjoin where cuisine="Bar";
+Query ID = cloudera_20151206151616_d0d3671a-1a2c-4411-9c60-a904391e6ca5
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1449418043590_0036, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0036/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0036
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2015-12-06 15:17:05,595 Stage-1 map = 0%,  reduce = 0%
+2015-12-06 15:17:17,695 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.98 sec
+MapReduce Total cumulative CPU time: 2 seconds 980 msec
+Ended Job = job_1449418043590_0036
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/.hive-staging_hive_2015-12-06_15-16-51_556_5989979647847273991-1/-ext-10001
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/bar_cnt
+Table default.bar_cnt stats: [numFiles=1, numRows=279, totalSize=2565, rawDataSize=2286]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 2.98 sec   HDFS Read: 51879 HDFS Write: 2639 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 980 msec
+OK
+Time taken: 28.63 seconds
+hive> create table cafe_cnt as select zipcode as zip_caf, cnt as cnt_caf from rest_zip_crossjoin where cuisine="Cafe";
+Query ID = cloudera_20151206151717_f54efa17-6b6f-4129-8eab-30cd7beb63b2
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1449418043590_0037, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0037/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0037
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2015-12-06 15:18:14,223 Stage-1 map = 0%,  reduce = 0%
+2015-12-06 15:18:25,197 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.83 sec
+MapReduce Total cumulative CPU time: 2 seconds 830 msec
+Ended Job = job_1449418043590_0037
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/.hive-staging_hive_2015-12-06_15-17-59_339_3009735753444821074-1/-ext-10001
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/cafe_cnt
+Table default.cafe_cnt stats: [numFiles=1, numRows=279, totalSize=2581, rawDataSize=2302]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 2.83 sec   HDFS Read: 51881 HDFS Write: 2656 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 830 msec
+OK
+Time taken: 27.383 seconds
+hive> create table fastfood_cnt as select zipcode as zip_fas, cnt as cnt_fas from rest_zip_crossjoin where cuisine="FastFood";
+Query ID = cloudera_20151206151818_d5ba8753-d076-4420-b540-f563cab2ff82
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1449418043590_0038, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0038/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0038
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2015-12-06 15:19:09,273 Stage-1 map = 0%,  reduce = 0%
+2015-12-06 15:19:20,223 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.78 sec
+MapReduce Total cumulative CPU time: 2 seconds 780 msec
+Ended Job = job_1449418043590_0038
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/.hive-staging_hive_2015-12-06_15-18-55_690_3719948627031663957-1/-ext-10001
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/fastfood_cnt
+Table default.fastfood_cnt stats: [numFiles=1, numRows=279, totalSize=2712, rawDataSize=2433]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 2.78 sec   HDFS Read: 51889 HDFS Write: 2791 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 780 msec
+OK
+Time taken: 26.02 seconds
+hive> create table halal_cnt as select zipcode as zip_hal, cnt as cnt_hal from rest_zip_crossjoin where cuisine="Halal";
+Query ID = cloudera_20151206151919_1507f67e-f9c2-44a2-92af-8ced8174a8a6
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1449418043590_0039, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0039/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0039
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2015-12-06 15:19:57,728 Stage-1 map = 0%,  reduce = 0%
+2015-12-06 15:20:08,683 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.85 sec
+MapReduce Total cumulative CPU time: 2 seconds 850 msec
+Ended Job = job_1449418043590_0039
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/.hive-staging_hive_2015-12-06_15-19-44_934_4404693038834231520-1/-ext-10001
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/halal_cnt
+Table default.halal_cnt stats: [numFiles=1, numRows=279, totalSize=2515, rawDataSize=2236]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 2.85 sec   HDFS Read: 51883 HDFS Write: 2591 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 850 msec
+OK
+Time taken: 26.198 seconds
+hive> create table latin_cnt as select zipcode as zip_lat, cnt as cnt_lat from rest_zip_crossjoin where cuisine="Latin";
+Query ID = cloudera_20151206152020_e6f75bd0-3032-4873-8813-d2931b8fc93d
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1449418043590_0040, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0040/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0040
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2015-12-06 15:20:56,916 Stage-1 map = 0%,  reduce = 0%
+2015-12-06 15:21:07,887 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.88 sec
+MapReduce Total cumulative CPU time: 2 seconds 880 msec
+Ended Job = job_1449418043590_0040
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/.hive-staging_hive_2015-12-06_15-20-43_334_7117433776299973424-1/-ext-10001
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/latin_cnt
+Table default.latin_cnt stats: [numFiles=1, numRows=279, totalSize=2597, rawDataSize=2318]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 2.88 sec   HDFS Read: 51883 HDFS Write: 2673 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 880 msec
+OK
+Time taken: 27.207 seconds
+hive> create table med_cnt as select zipcode as zip_med, cnt as cnt_med from rest_zip_crossjoin where cuisine="Mediterranean";
+Query ID = cloudera_20151206152121_972ec907-05fa-4a9a-aa7f-3dffff29df91
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1449418043590_0041, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0041/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0041
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2015-12-06 15:22:06,009 Stage-1 map = 0%,  reduce = 0%
+2015-12-06 15:22:16,920 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.84 sec
+MapReduce Total cumulative CPU time: 2 seconds 840 msec
+Ended Job = job_1449418043590_0041
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/.hive-staging_hive_2015-12-06_15-21-52_012_6269852022433264513-1/-ext-10001
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/med_cnt
+Table default.med_cnt stats: [numFiles=1, numRows=279, totalSize=2518, rawDataSize=2239]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 2.84 sec   HDFS Read: 51889 HDFS Write: 2592 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 840 msec
+OK
+Time taken: 27.441 seconds
+hive> create table vegan_cnt as select zipcode as zip_veg, cnt as cnt_veg from rest_zip_crossjoin where cuisine="Vegan";
+Query ID = cloudera_20151206152222_7d8d741b-cf73-496a-aea1-9d94cbd57ced
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1449418043590_0042, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0042/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0042
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2015-12-06 15:23:05,333 Stage-1 map = 0%,  reduce = 0%
+2015-12-06 15:23:16,116 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.86 sec
+MapReduce Total cumulative CPU time: 2 seconds 860 msec
+Ended Job = job_1449418043590_0042
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/.hive-staging_hive_2015-12-06_15-22-52_702_4785059272870193110-1/-ext-10001
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/vegan_cnt
+Table default.vegan_cnt stats: [numFiles=1, numRows=278, totalSize=2503, rawDataSize=2225]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 2.86 sec   HDFS Read: 51883 HDFS Write: 2579 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 860 msec
+OK
+Time taken: 26.025 seconds

@@ -1,0 +1,46 @@
+hive> create table rest_zip_crossjoin as select * from distinct_zip cross join distinct_cuisine;
+Warning: Map Join MAPJOIN[7][bigTable=distinct_zip] in task 'Stage-4:MAPRED' is a cross product
+Query ID = cloudera_20151206202020_e77adf90-6ad6-424d-8c60-6ca479dcd163
+Total jobs = 1
+Execution log at: /tmp/cloudera/cloudera_20151206202020_e77adf90-6ad6-424d-8c60-6ca479dcd163.log
+2015-12-06 08:20:27	Starting to launch local task to process map join;	maximum memory = 932184064
+2015-12-06 08:20:29	Dump the side-table for tag: 1 with group count: 1 into file: file:/tmp/cloudera/22c0368c-a58b-4d27-bc4c-6b2ac4b5ca03/hive_2015-12-06_20-20-21_500_5958681428608002301-1/-local-10003/HashTable-Stage-4/MapJoin-mapfile11--.hashtable
+2015-12-06 08:20:29	Uploaded 1 File to: file:/tmp/cloudera/22c0368c-a58b-4d27-bc4c-6b2ac4b5ca03/hive_2015-12-06_20-20-21_500_5958681428608002301-1/-local-10003/HashTable-Stage-4/MapJoin-mapfile11--.hashtable (393 bytes)
+2015-12-06 08:20:29	End of local task; Time Taken: 1.798 sec.
+Execution completed successfully
+MapredLocal task succeeded
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1449418043590_0063, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0063/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0063
+Hadoop job information for Stage-4: number of mappers: 1; number of reducers: 0
+2015-12-06 20:20:38,855 Stage-4 map = 0%,  reduce = 0%
+2015-12-06 20:20:46,255 Stage-4 map = 100%,  reduce = 0%, Cumulative CPU 2.17 sec
+MapReduce Total cumulative CPU time: 2 seconds 170 msec
+Ended Job = job_1449418043590_0063
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/rest_zip_crossjoin
+Table default.rest_zip_crossjoin stats: [numFiles=1, numRows=2790, totalSize=39339, rawDataSize=36549]
+MapReduce Jobs Launched: 
+Stage-Stage-4: Map: 1   Cumulative CPU: 2.17 sec   HDFS Read: 7330 HDFS Write: 39426 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 170 msec
+OK
+Time taken: 27.276 seconds
+hive> select * from rest_zip_crossjoin limit 15;
+OK
+ 10001	American
+ 10001	Asian
+ 10001	Bar
+ 10001	Cafe
+ 10001	FastFood
+ 10001	Halal
+ 10001	Latin
+ 10001	Mediterranean
+ 10001	Other
+ 10001	Vegan
+ 10002	American
+ 10002	Asian
+ 10002	Bar
+ 10002	Cafe
+ 10002	FastFood
+Time taken: 0.07 seconds, Fetched: 15 row(s)
+hive> 

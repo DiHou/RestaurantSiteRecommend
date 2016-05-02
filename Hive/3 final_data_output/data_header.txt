@@ -1,0 +1,17 @@
+zip                 	string              	                    
+pop2013             	int                 	                    
+median_income       	int                 	                    
+b_pop               	int                 	                    
+w_pp                	int                 	                    
+a_pop               	int                 	                    
+hl_pop              	int                 	                    
+cnt_ame             	int                 	                    
+cnt_asi             	int                 	                    
+cnt_bar             	int                 	                    
+cnt_caf             	int                 	                    
+cnt_fas             	int                 	                    
+cnt_hal             	int                 	                    
+cnt_lat             	int                 	                    
+cnt_med             	int                 	                    
+cnt_veg             	int                 	                    
+cnt_oth             	int

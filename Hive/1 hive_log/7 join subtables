@@ -1,0 +1,91 @@
+hive> create table cuisine_join as select * from american_cnt join asian_cnt on american_cnt.zip_ame=asian_cnt.zip_asi join bar_cnt on bar_cnt.zip_bar=asian_cnt.zip_asi join cafe_cnt on cafe_cnt.zip_caf=bar_cnt.zip_bar join fastfood_cnt on fastfood_cnt.zip_fas=cafe_cnt.zip_caf join halal_cnt on halal_cnt.zip_hal=fastfood_cnt.zip_fas join latin_cnt on latin_cnt.zip_lat=halal_cnt.zip_hal join med_cnt on med_cnt.zip_med=latin_cnt.zip_lat join other_cnt on other_cnt.zip_oth=med_cnt.zip_med join vegan_cnt on vegan_cnt.zip_veg=other_cnt.zip_oth;
+Query ID = cloudera_20151206152424_60f803db-3e42-428e-8a55-51a94d4f3768
+Total jobs = 1
+Execution log at: /tmp/cloudera/cloudera_20151206152424_60f803db-3e42-428e-8a55-51a94d4f3768.log
+2015-12-06 03:24:29	Starting to launch local task to process map join;	maximum memory = 932184064
+2015-12-06 03:24:33	Dump the side-table for tag: 0 with group count: 279 into file: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile00--.hashtable
+2015-12-06 03:24:33	Uploaded 1 File to: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile00--.hashtable (7549 bytes)
+2015-12-06 03:24:33	Dump the side-table for tag: 1 with group count: 279 into file: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile01--.hashtable
+2015-12-06 03:24:33	Uploaded 1 File to: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile01--.hashtable (7553 bytes)
+2015-12-06 03:24:33	Dump the side-table for tag: 2 with group count: 279 into file: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile02--.hashtable
+2015-12-06 03:24:33	Uploaded 1 File to: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile02--.hashtable (7549 bytes)
+2015-12-06 03:24:33	Dump the side-table for tag: 3 with group count: 279 into file: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile03--.hashtable
+2015-12-06 03:24:33	Uploaded 1 File to: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile03--.hashtable (7549 bytes)
+2015-12-06 03:24:33	Dump the side-table for tag: 5 with group count: 279 into file: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile05--.hashtable
+2015-12-06 03:24:33	Uploaded 1 File to: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile05--.hashtable (7549 bytes)
+2015-12-06 03:24:33	Dump the side-table for tag: 6 with group count: 279 into file: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile06--.hashtable
+2015-12-06 03:24:33	Uploaded 1 File to: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile06--.hashtable (7549 bytes)
+2015-12-06 03:24:33	Dump the side-table for tag: 7 with group count: 279 into file: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile07--.hashtable
+2015-12-06 03:24:33	Uploaded 1 File to: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile07--.hashtable (7549 bytes)
+2015-12-06 03:24:33	Dump the side-table for tag: 8 with group count: 279 into file: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile08--.hashtable
+2015-12-06 03:24:33	Uploaded 1 File to: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile08--.hashtable (7549 bytes)
+2015-12-06 03:24:33	Dump the side-table for tag: 9 with group count: 278 into file: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile09--.hashtable
+2015-12-06 03:24:33	Uploaded 1 File to: file:/tmp/cloudera/a3f5d596-f612-4dd9-91d3-98f25b7d861a/hive_2015-12-06_15-24-17_556_3702778515570289149-1/-local-10004/HashTable-Stage-12/MapJoin-mapfile09--.hashtable (7523 bytes)
+2015-12-06 03:24:33	End of local task; Time Taken: 3.952 sec.
+Execution completed successfully
+MapredLocal task succeeded
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1449418043590_0043, Tracking URL = http://quickstart.cloudera:8088/proxy/application_1449418043590_0043/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1449418043590_0043
+Hadoop job information for Stage-12: number of mappers: 1; number of reducers: 0
+2015-12-06 15:24:48,663 Stage-12 map = 0%,  reduce = 0%
+2015-12-06 15:25:00,799 Stage-12 map = 100%,  reduce = 0%, Cumulative CPU 3.38 sec
+MapReduce Total cumulative CPU time: 3 seconds 380 msec
+Ended Job = job_1449418043590_0043
+Moving data to: hdfs://quickstart.cloudera:8020/user/hive/warehouse/cuisine_join
+Table default.cuisine_join stats: [numFiles=1, numRows=278, totalSize=25807, rawDataSize=25529]
+MapReduce Jobs Launched: 
+Stage-Stage-12: Map: 1   Cumulative CPU: 3.38 sec   HDFS Read: 17676 HDFS Write: 25887 SUCCESS
+Total MapReduce CPU Time Spent: 3 seconds 380 msec
+OK
+Time taken: 44.813 seconds
+hive> describe cuisine_join;
+OK
+zip_ame             	string              	                    
+cnt_ame             	int                 	                    
+zip_asi             	string              	                    
+cnt_asi             	int                 	                    
+zip_bar             	string              	                    
+cnt_bar             	int                 	                    
+zip_caf             	string              	                    
+cnt_caf             	int                 	                    
+zip_fas             	string              	                    
+cnt_fas             	int                 	                    
+zip_hal             	string              	                    
+cnt_hal             	int                 	                    
+zip_lat             	string              	                    
+cnt_lat             	int                 	                    
+zip_med             	string              	                    
+cnt_med             	int                 	                    
+zip_oth             	string              	                    
+cnt_oth             	int                 	                    
+zip_veg             	string              	                    
+cnt_veg             	int                 	                    
+Time taken: 0.128 seconds, Fetched: 20 row(s)
+hive> select * from cuisine_join limit 10;
+OK
+ 10001	38	 10001	84	 10001	69	 10001	52	 10001	210	 10001	7	 10001	10	 10001	6	 10001	121	 10001	4
+ 10002	14	 10002	106	 10002	30	 10002	47	 10002	44	 10002	0	 10002	14	 10002	4	 10002	32	 10002	1
+ 10003	35	 10003	86	 10003	59	 10003	38	 10003	75	 10003	5	 10003	19	 10003	7	 10003	25	 10003	10
+ 10004	14	 10004	10	 10004	19	 10004	15	 10004	82	 10004	2	 10004	7	 10004	1	 10004	29	 10004	0
+ 10005	4	 10005	11	 10005	5	 10005	5	 10005	56	 10005	0	 10005	0	 10005	1	 10005	11	 10005	0
+ 10006	3	 10006	11	 10006	7	 10006	4	 10006	30	 10006	0	 10006	1	 10006	1	 10006	12	 10006	1
+ 10007	11	 10007	36	 10007	13	 10007	11	 10007	69	 10007	1	 10007	6	 10007	3	 10007	28	 10007	0
+ 10008	0	 10008	0	 10008	0	 10008	1	 10008	0	 10008	0	 10008	0	 10008	0	 10008	0	 10008	0
+ 10009	15	 10009	17	 10009	31	 10009	19	 10009	31	 10009	0	 10009	18	 10009	6	 10009	16	 10009	6
+ 10010	12	 10010	22	 10010	23	 10010	13	 10010	36	 10010	0	 10010	7	 10010	4	 10010	22	 10010	2
+Time taken: 0.099 seconds, Fetched: 10 row(s)
+hive> select * from cuisine_join limit 10;
+OK
+ 10001	38	 10001	84	 10001	69	 10001	52	 10001	210	 10001	7	 10001	10	 10001	6	 10001	121	 10001	4
+ 10002	14	 10002	106	 10002	30	 10002	47	 10002	44	 10002	0	 10002	14	 10002	4	 10002	32	 10002	1
+ 10003	35	 10003	86	 10003	59	 10003	38	 10003	75	 10003	5	 10003	19	 10003	7	 10003	25	 10003	10
+ 10004	14	 10004	10	 10004	19	 10004	15	 10004	82	 10004	2	 10004	7	 10004	1	 10004	29	 10004	0
+ 10005	4	 10005	11	 10005	5	 10005	5	 10005	56	 10005	0	 10005	0	 10005	1	 10005	11	 10005	0
+ 10006	3	 10006	11	 10006	7	 10006	4	 10006	30	 10006	0	 10006	1	 10006	1	 10006	12	 10006	1
+ 10007	11	 10007	36	 10007	13	 10007	11	 10007	69	 10007	1	 10007	6	 10007	3	 10007	28	 10007	0
+ 10008	0	 10008	0	 10008	0	 10008	1	 10008	0	 10008	0	 10008	0	 10008	0	 10008	0	 10008	0
+ 10009	15	 10009	17	 10009	31	 10009	19	 10009	31	 10009	0	 10009	18	 10009	6	 10009	16	 10009	6
+ 10010	12	 10010	22	 10010	23	 10010	13	 10010	36	 10010	0	 10010	7	 10010	4	 10010	22	 10010	2
+Time taken: 0.107 seconds, Fetched: 10 row(s)

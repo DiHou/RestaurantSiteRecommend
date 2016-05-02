@@ -1,0 +1,37 @@
+hive> select * from rest_zip_crossjoin limit 10;
+OK
+ 10001	American	38
+ 10001	Asian	84
+ 10001	Bar	69
+ 10001	Cafe	52
+ 10001	FastFood	210
+ 10001	Halal	7
+ 10001	Latin	10
+ 10001	Mediterranean	6
+ 10001	Other	121
+ 10001	Vegan	4
+Time taken: 0.661 seconds, Fetched: 10 row(s)
+hive> select * from rest_zip_crossjoin limit 20;
+OK
+ 10001	American	38
+ 10001	Asian	84
+ 10001	Bar	69
+ 10001	Cafe	52
+ 10001	FastFood	210
+ 10001	Halal	7
+ 10001	Latin	10
+ 10001	Mediterranean	6
+ 10001	Other	121
+ 10001	Vegan	4
+ 10002	American	14
+ 10002	Asian	106
+ 10002	Bar	30
+ 10002	Cafe	47
+ 10002	FastFood	44
+ 10002	Halal	0
+ 10002	Latin	14
+ 10002	Mediterranean	4
+ 10002	Other	32
+ 10002	Vegan	1
+Time taken: 0.084 seconds, Fetched: 20 row(s)
+hive> 

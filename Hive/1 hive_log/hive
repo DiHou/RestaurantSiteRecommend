@@ -1,0 +1,47 @@
+Input data: cityclean, restclean
+
+- input restclean to hdfs
+$ hdfs dfs -mkdir restclean
+$ hdfs dfs -put /home/cloudera/Desktop/restclean restclean
+	
+hive> create external table restclean(zipcode string, cuisine string, price string)
+    > row format delimited fields terminated by “,”
+    > location '/user/cloudera/restclean/';
+
+
+- create table to show number of cuisines in each zip
+hive> create table rest_byzip as select zipcode, cuisine, count(cuisine) as cnt from restclean group by zipcode, cuisine;
+		
+- create table to show distinct cuisines and zipcodes
+hive> create table distinct_cuisine as select distinct cuisine from restclean;
+hive> create table distinct_zip as select distinct zipcode from restclean;
+
+- create cartesian product of distinct cuisine and zip
+hive> create table rest_zip_crossjoin0 as select * from distinct_zip cross join distinct_cuisine;
+
+- use python to further deal with the cartesian product, matching numbers and adding zeros(see filename 'rest_number_match'), output rest_zip_crossjoin to hdfs
+$ hdfs dfs -mkdir rest_zip_crossjoin
+$ hdfs dfs -put /home/cloudera/Desktop/rest_zip_crossjoin rest_zip_crossjoin
+
+hive> create external table rest_zip_crossjoin(zipcode string, cuisine string, cnt int)
+    > row format delimited fields terminated by ","
+    > location '/user/cloudera/rest_zip_crossjoin/';
+
+- decompose rest_zip_crossjoin into several tables specifying the same cuisine numbers in each zipcode, example:
+hive> create table bar_cnt as select zipcode as zip_bar, cnt as cnt_bar from rest_zip_crossjoin where cuisine="Bar";
+
+- join all sub-tables by the key zipcode
+hive> create table cuisine_join as select * from american_cnt join asian_cnt on american_cnt.zip_ame=asian_cnt.zip_asi join bar_cnt on bar_cnt.zip_bar=asian_cnt.zip_asi join cafe_cnt on cafe_cnt.zip_caf=bar_cnt.zip_bar join fastfood_cnt on fastfood_cnt.zip_fas=cafe_cnt.zip_caf join halal_cnt on halal_cnt.zip_hal=fastfood_cnt.zip_fas join latin_cnt on latin_cnt.zip_lat=halal_cnt.zip_hal join med_cnt on med_cnt.zip_med=latin_cnt.zip_lat join other_cnt on other_cnt.zip_oth=med_cnt.zip_med join vegan_cnt on vegan_cnt.zip_veg=other_cnt.zip_oth;
+
+- remove duplicate zip columns
+hive> create table cuisine_join_final as select zip_ame, cnt_ame, cnt_asi, cnt_bar, cnt_caf, cnt_fas, cnt_hal, cnt_lat, cnt_med, cnt_veg, cnt_oth from cuisine_join;
+
+- join cityclean and cuisine_join_final by zip
+hive> create table city_cuisine_temp as select * from cityclean join cuisine_join_final on cityclean.zip=cuisine_join_final.zip_ame;
+
+- remove duplicate zip columns
+hive> create table city_cuisine_join as select zip, pop2013, median_income, b_pop, w_pp, a_pop, hl_pop, cnt_ame, cnt_asi, cnt_bar, cnt_caf, cnt_fas, cnt_hal, cnt_lat, cnt_med, cnt_veg, cnt_oth from city_cuisine_temp;
+
+- get the final output to local, comma as delimiter
+$ hdfs dfs -cat /user/hive/warehouse/city_cuisine_join/000000_0 | tr "\001" "," > city_cuisine_join_update;
+
